@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gcp-con-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: con
+  template:
+    metadata:
+      labels:
+        app: con
+    spec:
+      containers:
+      - name: gcp-con
+        image: spiridon26/gcp-con:1.0.1
+        ports:
+        - containerPort: 80
