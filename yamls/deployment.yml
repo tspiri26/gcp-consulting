@@ -1,3 +1,12 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysql-credentials
+type: Opaque
+data:
+  username: dGVv
+  password: QCFzcGlyaWRvbmVzY3VAITopKQ==
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,3 +26,16 @@ spec:
         image: spiridon26/gcp-con:latest
         ports:
         - containerPort: 80
+        env:
+        - name: MYSQL_HOST
+          value: 10.128.0.8
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: mysql-credentials
+              key: username
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-credentials
+              key: password
