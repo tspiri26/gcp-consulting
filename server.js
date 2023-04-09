@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
   host: '10.128.0.8',
   port: 3306,
   user: 'teo',
-  password: '@!spiridonescu@!:))',
+  password: 'wH27sK7g',
   database: 'clients'
 });
 

@@ -5,7 +5,8 @@ metadata:
 type: Opaque
 data:
   username: dGVv
-  password: QCFzcGlyaWRvbmVzY3VAITopKQ==
+  password: d0gyN3NLN2c=
+  databse: Y2xpZW50cw==
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -27,15 +28,24 @@ spec:
         ports:
         - containerPort: 80
         env:
-        - name: MYSQL_HOST
-          value: 10.128.0.8
-        - name: MYSQL_USER
+        - name: PORT
+          value: "80"
+        - name: INSTANCE_HOST
+          value: "10.128.0.8"
+        - name: DB_PORT
+          value: "3306"
+        - name: DB_USER
           valueFrom:
             secretKeyRef:
               name: mysql-credentials
               key: username
-        - name: MYSQL_PASSWORD
+        - name: DB_PASS
           valueFrom:
             secretKeyRef:
               name: mysql-credentials
               key: password
+        - name: DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: mysql-credentials
+              key: database
