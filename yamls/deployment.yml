@@ -26,10 +26,10 @@ spec:
       - name: gcp-con
         image: spiridon26/gcp-con:latest
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         env:
         - name: PORT
-          value: "80"
+          value: "8080"
         - name: INSTANCE_HOST
           value: "10.128.0.8"
         - name: DB_PORT
