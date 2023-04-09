@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: gcp-con
-        image: spiridon26/gcp-con:1.0.1
+        image: spiridon26/gcp-con:latest
         ports:
         - containerPort: 80
