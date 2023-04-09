@@ -35,7 +35,7 @@ app.get('/contact', (req, res) => {
 });
 
 // my changes
-app.get('/documenation', (req, res) => {
+app.get('/documentation', (req, res) => {
   res.sendFile(__dirname + '/views/documentation.html');
 });
 
