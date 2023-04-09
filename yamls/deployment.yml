@@ -6,7 +6,7 @@ type: Opaque
 data:
   username: dGVv
   password: d0gyN3NLN2c=
-  databse: Y2xpZW50cw==
+  database: Y2xpZW50cw==
 ---
 apiVersion: apps/v1
 kind: Deployment
