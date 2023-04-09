@@ -34,6 +34,11 @@ app.get('/contact', (req, res) => {
   res.sendFile(__dirname + '/views/contact.html');
 });
 
+// my changes
+app.get('/documenation', (req, res) => {
+  res.sendFile(__dirname + '/views/documentation.html');
+});
+
 app.post('/contact', (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
