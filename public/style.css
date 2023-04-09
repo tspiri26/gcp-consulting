@@ -86,4 +86,40 @@ form button[type="submit"] {
 form button[type="submit"]:hover {
 	background-color: #555;
 }
-  
+
+.centered {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 70vh;
+text-align: center;
+}
+
+.link-list {
+list-style-type: none;
+margin: 0;
+padding: 0;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.link-list li {
+margin: 10px;
+}
+
+.link-list a {
+display: block;
+padding: 10px;
+background-color: #fff;
+color: #333;
+border-radius: 5px;
+text-decoration: none;
+font-size: 18px;
+}
+
+.link-list a:hover {
+background-color: #333;
+color: #fff;
+}
