@@ -31,7 +31,6 @@ spec:
   #   name: gcp-con-service
   #   port:
   #     number: 8080
-  spec:
   rules:
   - host: "gcp-consulting.tech"
     http:
