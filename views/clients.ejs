@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clients</title>
+</head>
+<body>
+	<h1>Clients</h1>
+	<ul>
+		<% for(var i=0; i<clients.length; i++) { %>
+			<li>Name: <%= clients[i].name %>, Email: <%= clients[i].email %></li>
+		<% } %>
+	</ul>
+</body>
+</html>
