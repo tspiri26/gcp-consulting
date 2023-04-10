@@ -171,3 +171,20 @@ font-size: 18px;
 background-color: #333;
 color: #fff;
 }
+
+.client-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.client-list li {
+    margin: 20px;
+}
+
+.client-list img {
+    max-width: 150px;
+    max-height: 150px;
+}
