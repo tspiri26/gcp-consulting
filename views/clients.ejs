@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Clients</title>
-</head>
-<body>
-	<h1>Clients</h1>
-	<ul>
-		<% for(var i=0; i<clients.length; i++) { %>
-			<li>Name: <%= clients[i].name %>, Email: <%= clients[i].email %></li>
-		<% } %>
-	</ul>
-</body>
+  <head>
+    <title>List of Clients</title>
+  </head>
+  <body>
+    <h1>List of Clients</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% results.forEach((client) => { %>
+        <tr>
+          <td><%= client.name %></td>
+          <td><%= client.email %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </body>
 </html>
