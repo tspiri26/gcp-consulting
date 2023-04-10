@@ -65,7 +65,7 @@ body {
   button {
 	background-color: #333;
 	border: none;
-	border-radius: 50%;
+	border-radius: 70%;
 	color: #fff;
 	cursor: pointer;
 	font-size: 16px;
@@ -73,7 +73,7 @@ body {
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	margin: 4px 2px;
+	margin: 10px 20px;
 	transition-duration: 0.4s;
   }
   
