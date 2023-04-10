@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clients - GCP Cloud Consulting</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image: url('https://wallpapercave.com/wp/wp3429905.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+	<header>
+		<h1>GCP Cloud Consulting</h1>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/contact">Contact Us</a></li>
+				<li><a href="/documentation">Documentation</a></li>
+				<li><a href="/clients">Clients</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section class="centered">
+			<h2>Clients</h2>
+			<ul id="client-list"></ul>
+		</section>
+	</main>
+	<script>
+		// This script will fetch the list of clients and display them on the page
+		fetch('/clients')
+			.then(response => response.json())
+			.then(data => {
+				const clientList = document.getElementById('client-list');
+				data.forEach(client => {
+					const li = document.createElement('li');
+					li.textContent = `${client.name} (${client.email})`;
+					clientList.appendChild(li);
+				});
+			})
+			.catch(error => console.error(error));
+	</script>
+</body>
+</html>
