@@ -42,7 +42,7 @@ app.get('/documentation', (req, res) => {
 // Add a new route to handle the /clients URL
 app.get('/clients', (req, res) => {
 	// Query the MySQL database to fetch the list of clients
-	connection.query('SELECT name, email FROM message', (error, results) => {
+	connection.query('SELECT name, email FROM messages', (error, results) => {
 		if (error) {
 			console.error('Error fetching clients: ' + error.stack);
 			res.status(500).send('Internal Server Error');
