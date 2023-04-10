@@ -77,3 +77,5 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
 });
+
+server.keepAliveTimeout = 620 * 1000;  // 60 seconds
