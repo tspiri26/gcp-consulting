@@ -12,7 +12,7 @@ metadata:
   name: my-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    kubernetes.io/ingress.global-static-ip-name: 34.149.68.144
+    kubernetes.io/ingress.global-static-ip-name: 34.160.253.202
     networking.gke.io/managed-certificates: managed-cert
     kubernetes.io/ingress.class: "gce"
 spec:
