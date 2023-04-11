@@ -45,6 +45,10 @@ app.get('/documentation', (req, res) => {
   res.sendFile(__dirname + '/views/documentation.html');
 });
 
+app.get('/translate', (req, res) => {
+  res.sendFile(__dirname + '/views/translate.html');
+});
+
 app.post('/translate', (req, res) => {
   const options = {
     method: 'POST',
