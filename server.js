@@ -41,24 +41,6 @@ app.get('/contact', (req, res) => {
   res.sendFile(__dirname + '/views/contact.html');
 });
 
-app.post('/contact', (req, res) => {
-  const name = req.body.name;
-  const email = req.body.email;
-  const message = req.body.message;
-
-  // Insert the message into the MySQL database
-  const sql = 'INSERT INTO messages (name, email, message) VALUES (?, ?, ?)';
-  connection.query(sql, [name, email, message], (err, result) => {
-    if (err) {
-      console.error('Error inserting the message into the MySQL database: ' + err.stack);
-      res.redirect('/contact?success=false');
-    } else {
-      console.log('Message inserted into the MySQL database with ID ' + result.insertId);
-      res.redirect('/contact?success=true');
-    }
-  });
-});
-
 // my changes
 app.get('/documentation', (req, res) => {
   res.sendFile(__dirname + '/views/documentation.html');
@@ -94,7 +76,23 @@ app.get('/clients', (req, res) => {
     res.render('clients', { results });
   });
 });
+app.post('/contact', (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const message = req.body.message;
 
+  // Insert the message into the MySQL database
+  const sql = 'INSERT INTO messages (name, email, message) VALUES (?, ?, ?)';
+  connection.query(sql, [name, email, message], (err, result) => {
+    if (err) {
+      console.error('Error inserting the message into the MySQL database: ' + err.stack);
+      res.redirect('/contact?success=false');
+    } else {
+      console.log('Message inserted into the MySQL database with ID ' + result.insertId);
+      res.redirect('/contact?success=true');
+    }
+  });
+});
 
 // Start the server
 // const PORT = process.env.PORT || 8080;
