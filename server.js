@@ -63,18 +63,17 @@ app.post('/translate', (req, res) => {
     form: {q: req.body.text, target: req.body.targetLang, source: req.body.sourceLang}
   };
   
-request(options, function (error, response, body) {
-  if (error) throw new Error(error);
+  request(options, function (error, response, body) {
+    if (error) throw new Error(error);
 
-  const result = JSON.parse(body);
-  const translatedText = result.data.translations[0].translatedText;
-  const prettyResult = JSON.stringify(result, null, 2);
-  
-  console.log('Translation:', translatedText);
-  console.log('Full response:', prettyResult);
-  res.send(translatedText);
+    const result = JSON.parse(body);
+    const translatedText = result.data.translations[0].translatedText;
+    const prettyResult = JSON.stringify(result, null, 2);
+    console.log('Translation:', translatedText);
+    console.log('Full response:', prettyResult);
+    res.send(translatedText);
+  });
 });
-
 // Add a new route to handle the /clients URL
 app.get('/clients', (req, res) => {
   connection.query('SELECT * FROM messages', (error, results) => {
