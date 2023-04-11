@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql2');
+const nodemailer = require('nodemailer');
+const request = require('request');
 const app = express();
 const ejs = require('ejs');
 const path = require('path');
@@ -39,20 +41,6 @@ app.get('/contact', (req, res) => {
   res.sendFile(__dirname + '/views/contact.html');
 });
 
-// my changes
-app.get('/documentation', (req, res) => {
-  res.sendFile(__dirname + '/views/documentation.html');
-});
-
-// Add a new route to handle the /clients URL
-app.get('/clients', (req, res) => {
-  connection.query('SELECT * FROM messages', (error, results) => {
-    if (error) {
-      return res.status(500).send(error);
-    }
-    res.render('clients', { results });
-  });
-});
 app.post('/contact', (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
@@ -70,6 +58,43 @@ app.post('/contact', (req, res) => {
     }
   });
 });
+
+// my changes
+app.get('/documentation', (req, res) => {
+  res.sendFile(__dirname + '/views/documentation.html');
+});
+
+app.post('/translate', (req, res) => {
+  const options = {
+    method: 'POST',
+    url: 'https://google-translate1.p.rapidapi.com/language/translate/v2',
+    headers: {
+      'content-type': 'application/x-www-form-urlencoded',
+      'Accept-Encoding': 'application/gzip',
+      'X-RapidAPI-Key': 'aabc4d03b4msh863a2772a966e75p1bd9f6jsna97f46f128d7',
+      'X-RapidAPI-Host': 'google-translate1.p.rapidapi.com',
+      useQueryString: true
+    },
+    form: {q: req.body.text, target: req.body.targetLang, source: req.body.sourceLang}
+  };
+  
+  request(options, function (error, response, body) {
+    if (error) throw new Error(error);
+    
+    res.send(body);
+  });
+});
+
+// Add a new route to handle the /clients URL
+app.get('/clients', (req, res) => {
+  connection.query('SELECT * FROM messages', (error, results) => {
+    if (error) {
+      return res.status(500).send(error);
+    }
+    res.render('clients', { results });
+  });
+});
+
 
 // Start the server
 // const PORT = process.env.PORT || 8080;
