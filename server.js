@@ -74,6 +74,28 @@ app.post('/translate', (req, res) => {
     res.send(translatedText);
   });
 });
+
+app.get('/api/messages/:id', (req, res) => {
+  const id = req.params.id;
+
+  connection.query('SELECT * FROM messages WHERE id = ?', [id], (error, results) => {
+    if (error) {
+      return res.status(500).send(error);
+    }
+    if (results.length === 0) {
+      return res.status(404).send('Message not found');
+    }
+    const message = results[0];
+    const response = {
+      id: message.id,
+      name: message.name,
+      email: message.email,
+      message: message.message
+    };
+    res.send(response);
+  });
+});
+
 // Add a new route to handle the /clients URL
 app.get('/clients', (req, res) => {
   connection.query('SELECT * FROM messages', (error, results) => {
