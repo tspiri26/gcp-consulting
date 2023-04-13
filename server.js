@@ -78,7 +78,9 @@ app.post("/translate", (req, res) => {
     res.send(translatedText);
   });
 });
-
+//curl https://gcp-consulting.tech/api/messages/3
+//apiproxy
+//curl https://35.244.225.243.nip.io/gcpcon
 app.get("/api/messages/:id", (req, res) => {
   const id = req.params.id;
 
@@ -113,6 +115,9 @@ app.get("/clients", (req, res) => {
     res.render("clients", { results });
   });
 });
+
+//curl -X POST -H "Content-Type: application/json" -d '{"name":"John","email":"johndoe@example.com","message":"Hello"}' https://gcp-consulting.tech/contact
+
 app.post("/contact", (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
