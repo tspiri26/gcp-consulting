@@ -80,7 +80,7 @@ app.post("/translate", (req, res) => {
 });
 //curl https://gcp-consulting.tech/api/messages/3
 //apiproxy
-//curl https://35.244.225.243.nip.io/gcpcon
+//curl https://35.244.225.243.nip.io/gcpconv2
 app.get("/api/messages/:id", (req, res) => {
   const id = req.params.id;
 
@@ -140,11 +140,6 @@ app.post("/contact", (req, res) => {
   });
 });
 
-// Start the server
-// const PORT = process.env.PORT || 8080;
-// app.listen(PORT, () => {
-//   console.log(`Server started on port ${PORT}`);
-// });
 const server = app.listen(process.env.PORT || 8080, () => {
   console.log(`Server started on port ${server.address().port}`);
 });
