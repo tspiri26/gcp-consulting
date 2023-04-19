@@ -182,18 +182,23 @@ color: #fff;
     max-width: 150px;
     max-height: 150px;
 }
+.scrollable-table {
+    max-height: 300px; /* Set the maximum height for the scrollable area */
+    overflow-y: auto; /* Add a vertical scrollbar when the content overflows */
+    display: block; /* Make the container a block element */
+}
+
 table {
-    margin: 0 auto;
-    width: 80%;
-    border-collapse: collapse;
-    background-color: white;
+    width: 100%; /* Make the table 100% wide */
+    border-collapse: collapse; /* Collapse borders */
 }
+
 th, td {
-padding: 12px;
-text-align: left;
-border-bottom: 1px solid #000000;
+border: 1px solid #ccc; /* Add a border to table cells */
+padding: 8px; /* Add padding to table cells */
+text-align: left; /* Align text to the left */
 }
+
 th {
-background-color: #323232;
-color: white;
+background-color: #f2f2f2; /* Set the background color for table headers */
 }
