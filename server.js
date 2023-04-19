@@ -17,6 +17,7 @@ const connection = mysql.createConnection({
   user: "teo",
   password: "wH27sK7g",
   database: "clients",
+  connectTimeout: 10000
 });
 
 app.set("view engine", "ejs");
