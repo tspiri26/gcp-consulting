@@ -1,28 +1,39 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>List of Clients</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h7>List of Clients</h7>
-    <div class="scrollable-table">
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% results.forEach((client) => { %>
-          <tr>
-            <td><%= client.name %></td>
-            <td><%= client.email %></td>
-          </tr>
-          <% }); %>
-        </tbody>
-      </table>
-    </div>
-  </body>
+</head>
+<body>
+  <h7>List of Clients</h7>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% results.forEach((client) => { %>
+      <tr>
+        <td><%= client.name %></td>
+        <td><%= client.email %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <div class="scrollable-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% results.forEach((client) => { %>
+        <tr>
+          <td><%= client.name %></td>
+          <td><%= client.email %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</body>
 </html>
