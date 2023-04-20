@@ -166,21 +166,46 @@ background-color: #333;
 color: #fff;
 }
 
+.centered {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
+	text-align: center;
+}
+
 .client-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin-top: 50px;
 }
 
 .client-list li {
-    margin: 20px;
+	margin: 20px;
+	text-align: center;
 }
 
 .client-list img {
-    max-width: 150px;
-    max-height: 150px;
+	max-width: 150px;
+	max-height: 150px;
+	border-radius: 50%;
+	border: 5px solid #fff;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.client-list h3 {
+	font-size: 24px;
+	margin-top: 20px;
+}
+
+.client-list p {
+	font-size: 18px;
+	color: #777;
+	margin-top: 10px;
 }
 .scrollable-table {
     max-height: 300px; /* Set the maximum height for the scrollable area */

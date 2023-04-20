@@ -1,40 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List of Clients</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h7>List of Clients</h7>
-  <link rel="stylesheet" href="style.css">
-  <!-- <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% results.forEach((client) => { %>
-      <tr>
-        <td><%= client.name %></td>
-        <td><%= client.email %></td>
-      </tr>
-      <% }); %>
-    </tbody>
-  </table> -->
-  <div class="scrollable-table">
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% results.forEach((client) => { %>
-        <tr>
-          <td><%= client.name %></td>
-          <td><%= client.email %></td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
-  </div>
+	<header>
+		<h1>List of Clients</h1>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/contact">Contact</a></li>
+				<li><a href="/documentation">Documentation</a></li>
+				<li><a href="/translate">Translate</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="centered">
+		<ul class="client-list">
+			<% results.forEach((client) => { %>
+			<li>
+				<img src="https://via.placeholder.com/150" alt="Client Image">
+				<h3><%= client.name %></h3>
+				<p><%= client.email %></p>
+			</li>
+			<% }); %>
+		</ul>
+	</div>
 </body>
 </html>
