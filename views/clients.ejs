@@ -10,9 +10,10 @@
 		<nav>
 			<ul>
 				<li><a href="/">Home</a></li>
-				<li><a href="/contact">Contact</a></li>
+				<li><a href="/contact">Contact Us</a></li>
 				<li><a href="/documentation">Documentation</a></li>
-				<li><a href="/translate">Translate</a></li>
+				<li><a href="/clients">Clients</a></li>
+				<li><a href="/translate">Translate-API</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -23,7 +24,8 @@
 				<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f4fcdcf2-99e8-4d6c-b560-1b1691949a74/d5ty2d6-aa24fa34-dad1-452b-a383-5977f6bc7443.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Y0ZmNkY2YyLTk5ZTgtNGQ2Yy1iNTYwLTFiMTY5MTk0OWE3NFwvZDV0eTJkNi1hYTI0ZmEzNC1kYWQxLTQ1MmItYTM4My01OTc3ZjZiYzc0NDMuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.3oFx9Jf4G4RUkoPhWS2RiiaYjESVvRkD7xSXQRmCRX8" alt="Client Image">
 				<h3><%= client.name %></h3>
 				<p><%= client.email %></p>
-			</li>
+				<p><%= client.message %></p>
+      </li>
 			<% }); %>
 		</ul>
 	</div>
