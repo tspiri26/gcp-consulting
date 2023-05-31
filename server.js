@@ -12,11 +12,11 @@ app.use(express.static(__dirname + "/public"));
 
 // Set up the MySQL connection
 const connection = mysql.createConnection({
-  host     : 'mysql-0.mysql.default.svc.cluster.local', // This is the name of the MySQL service
   // user     : process.env.MYSQL_USER,
   // password : process.env.MYSQL_PASSWORD,
   // database : process.env.MYSQL_DATABASE
   // host: "10.128.0.8",
+  host: "10.2.12.29",
   port: 3306,
   user: "teo",
   password: "wH27sK7g",
