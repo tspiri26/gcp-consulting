@@ -149,6 +149,8 @@ spec:
               secretKeyRef:
                 name: mysql-credentials
                 key: database
+          - name: MYSQL_ALLOW_EMPTY_PASSWORD
+            value: "yes"
           volumeMounts:
             - name: data
               mountPath: /var/lib/mysql
