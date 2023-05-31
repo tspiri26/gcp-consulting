@@ -115,7 +115,7 @@ kind: StatefulSet
 metadata:
   name: mysql
 spec:
-  replicas: 2
+  replicas: 1
   serviceName: mysql
   selector:
     matchLabels:
