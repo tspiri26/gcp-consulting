@@ -12,12 +12,12 @@ app.use(express.static(__dirname + "/public"));
 
 // Set up the MySQL connection
 const connection = mysql.createConnection({
-  host: "10.128.0.8",
-  port: 3306,
-  user: "teo",
-  password: "wH27sK7g",
-  database: "clients",
-  connectTimeout: 10000
+  // host: "10.128.0.8",
+  // port: 3306,
+  // user: "teo",
+  // password: "wH27sK7g",
+  // database: "clients",
+  // connectTimeout: 10000
 });
 
 app.set("view engine", "ejs");
