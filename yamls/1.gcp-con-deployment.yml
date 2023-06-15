@@ -34,11 +34,11 @@ spec:
 apiVersion: networking.gke.io/v1beta1
 kind: FrontendConfig
 metadata:
-  name: frontend-config
+  name: my-frontend-config
 spec:
   redirectToHttps:
     enabled: true
-    responseCodeName: 300
+    responseCodeName: MOVED_PERMANENTLY_DEFAULT
 ---
 apiVersion: cloud.google.com/v1
 kind: BackendConfig
@@ -56,9 +56,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: gcp-con-service
-  annotations:
-    cloud.google.com/backend-config: '{"ports": {"80":"my-backendconfig"}}'
-    cloud.google.com/neg: '{"ingress": true}'
 spec:
   type: NodePort
   selector:
