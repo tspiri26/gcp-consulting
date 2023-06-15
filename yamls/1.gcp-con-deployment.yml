@@ -15,6 +15,7 @@ metadata:
     kubernetes.io/ingress.global-static-ip-name: ingress
     networking.gke.io/managed-certificates: managed-cert
     kubernetes.io/ingress.class: "gce"
+    networking.gke.io/v1beta1.FrontendConfig: "frontend-config"
 spec:
   rules:
   - host: "gcp-consulting.net"
@@ -28,10 +29,34 @@ spec:
             port:
               number: 80
 ---
+apiVersion: networking.gke.io/v1beta1
+kind: FrontendConfig
+metadata:
+  name: frontend-config
+spec:
+  redirectToHttps:
+    enabled: true
+    responseCodeName: 300
+---
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: my-backendconfig
+spec:
+  timeoutSec: 40
+  customRequestHeaders:
+  headers:
+  - "X-Client-Region:{client_region}"
+  - "X-Client-City:{client_city}"
+  - "X-Client-CityLatLong:{client_city_lat_long}"
+---
 apiVersion: v1
 kind: Service
 metadata:
   name: gcp-con-service
+  annotations:
+    cloud.google.com/backend-config: '{"ports": {"80":"my-backendconfig"}}'
+    cloud.google.com/neg: '{"ingress": true}'
 spec:
   type: NodePort
   selector:
