@@ -16,6 +16,8 @@ metadata:
     networking.gke.io/managed-certificates: managed-cert
     kubernetes.io/ingress.class: "gce"
     networking.gke.io/v1beta1.FrontendConfig: "frontend-config"
+    cloud.google.com/backend-config: '{"ports": {"80":"my-backendconfig"}'
+    cloud.google.com/neg: '{"ingress": true}'
 spec:
   rules:
   - host: "gcp-consulting.net"
