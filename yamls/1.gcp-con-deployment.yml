@@ -86,7 +86,7 @@ spec:
         - containerPort: 8080
         env:
         - name: MYSQL_HOST
-          value: "10.128.0.8"
+          value: mysql.con.svc.cluster.local
         - name: MYSQL_PORT
           value: "3306"
         - name: MYSQL_USER
