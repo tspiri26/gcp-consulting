@@ -5,6 +5,8 @@ const request = require("request");
 const app = express();
 const ejs = require("ejs");
 const path = require("path");
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
 
 // Set up the middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,6 +32,11 @@ connection.connect((err) => {
   }
   console.log("Connected to the MySQL database as id " + connection.threadId);
 });
+
+app.use('/nginx', createProxyMiddleware({ 
+  target: 'http://localhost:80', // point to your nginx server here
+  changeOrigin: true,
+}));
 
 // Set up the routes
 app.get("/", (req, res) => {
