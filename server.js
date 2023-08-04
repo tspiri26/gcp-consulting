@@ -148,7 +148,7 @@ app.post("/contact", (req, res) => {
 });
 
 const server = app.listen(process.env.PORT || 8080, () => {
-  console.log(`Server started on port ${server.address().port}`);
+  console.error(`Server started on port ${server.address().port}`);
 });
 
 server.keepAliveTimeout = 620000; // 620 seconds
