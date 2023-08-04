@@ -146,6 +146,11 @@ app.post("/contact", (req, res) => {
     }
   });
 });
+try {
+  throw new Error("This is an error message");
+} catch (err) {
+  console.error(err);
+}
 
 const server = app.listen(process.env.PORT || 8080, () => {
   console.error(`Server started on port ${server.address().port}`);
