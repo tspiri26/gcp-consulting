@@ -152,6 +152,17 @@ try {
   console.error(err);
 }
 
+app.post("/test-url", (req, res) => {
+  const targetUrl = req.body.targetUrl;
+  request(targetUrl, function (error, response, body) {
+    if (error) {
+      return res.status(500).send(`Error connecting to ${targetUrl}: ${error}`);
+    }
+    res.status(200).send(`Successfully connected to ${targetUrl}`);
+  });
+});
+
+
 const server = app.listen(process.env.PORT || 8080, () => {
   console.error(`Server started on port ${server.address().port}`);
 });
